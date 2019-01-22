@@ -1,15 +1,18 @@
 <template>
-  <div class="about">
-    <h1>{{ msg }}</h1>
+  <div id="about">
+    <span>{{msg}}</span>
   </div>
 </template>
 
 <script>
+/*eslint-disable */
 export default {
-  name: 'About',
+  name: 'about',
   props: {
-    msg: String
+    msg: String,
   }
+  
+  
 }
 </script>
 
