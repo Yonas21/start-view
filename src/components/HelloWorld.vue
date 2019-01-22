@@ -1,12 +1,18 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <hr>
+    <p>Coniditonal Statements</p>
+    <span v-if="seen">Visible if True.</span>
   </div>
 </template>
 
 <script>
 export default {
   name: 'HelloWorld',
+  data:{
+    seen:true
+  },
   props: {
     msg: String
   }
@@ -25,6 +31,11 @@ ul {
 li {
   display: inline-block;
   margin: 0 10px;
+}
+
+span {
+  color: aqua;
+  font-size: 20px;
 }
 a {
   color: #42b983;
