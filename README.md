@@ -25,10 +25,10 @@ npm run test
 npm run lint
 ```
 ### run the project using
-npm serve run
+npm run serve
 
 ### build the project using
-npm serve build
+npm run build
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
