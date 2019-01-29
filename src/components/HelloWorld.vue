@@ -1,56 +1,62 @@
 
 <template>
   <div id="app">
-  <v-app id="inspire">
-    <v-content>
-      <v-container fluid fill-height>
-        <v-layout align-center justify-center>
-          <v-flex xs12 sm8 md4>
-            <v-card class="elevation-12">
-              <v-toolbar dark color="primary">
-                <v-toolbar-title>Login form</v-toolbar-title>
-                <v-spacer></v-spacer>
-                <v-tooltip bottom>
-                  <v-btn
-                    icon
-                    large
-                    :href="source"
-                    target="_blank"
-                    slot="activator"
-                  >
-                    <v-icon large>code</v-icon>
-                  </v-btn>
-                  <span>Source</span>
-                </v-tooltip>
-              </v-toolbar>
-              <v-card-text>
-                <v-form>
-                  <v-text-field prepend-icon="person" name="login" label="Login" type="text"></v-text-field>
-                  <v-text-field prepend-icon="lock" name="password" label="Password" id="password" type="password"></v-text-field>
-                </v-form>
-              </v-card-text>
-              <v-card-actions>
-                <v-spacer></v-spacer>
-                <v-btn color="primary">Login</v-btn>
-              </v-card-actions>
-            </v-card>
-          </v-flex>
-        </v-layout>
-      </v-container>
-    </v-content>
-  </v-app>
-</div>
+    My Name is {{ name }}.
+    <hr>
+    {{btnState?'button is disabled':'Button is Active.'}}
+    <hr>
+    <button v-on:click="changeName" v-bind:disabled="btnState">change Name</button>
+    <p v-for="(data,index) in skills" :key = 'index'>{{data.text}}</p>
+    <hr>
+    <span v-if="skills.length > 2">You have more than thing you have know.</span>
+    <span v-else>You need see Yourself back.</span>
+
+    <hr/>
+    <span v-if="!seen">this section is seen.</span>
+
+    <!-- another view holder for the style -->
+    <div v-bind:class="setAlarm">
+      Please.
+    </div>
+  </div>
 </template>
 
 <script>
 export default {
-  el: '#app',
-  data: () => ({
-    drawer: null
-  }),
-
-  props: {
-    source: String
+  name: "HelloWorld",
+  data() {
+    return {
+      name: "Yonas",
+      btnState: true,
+      seen:false,
+      skills: [
+        { text: "Welcome to Android." },
+        { text: "Welcome to html." },
+        { text: "Welcome to JS." }
+      ],
+      setAlarm:{
+        alert:true
+      },
+      skill:""
+    };
   }
-}
+};
 </script>
+
+<style scoped>
+
+button {
+  color: azure;
+  background-color: blueviolet;
+}
+
+.alert {
+  background-color: chocolate;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 30px;
+}
+
+.show {
+  background-color: aqua;
+}
+</style>
