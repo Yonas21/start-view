@@ -1,6 +1,6 @@
 <template>
   <div id="about">
-    <span>{{msg}}</span>
+    <span>{{name}}</span>
   </div>
 </template>
 
@@ -8,10 +8,11 @@
 /*eslint-disable */
 export default {
   name: 'about',
-  props: {
-    msg: String,
-  }
-  
+  data(){
+    return {
+      name:'Yonas'
+    }
+  }  
   
 }
 </script>

@@ -5,7 +5,7 @@
     <hr>
     {{btnState?'button is disabled':'Button is Active.'}}
     <hr>
-    <button v-on:click="changeName" v-bind:disabled="btnState">change Name</button>
+    <button v-bind:disabled="btnState">change Name</button>
     <p v-for="(data,index) in skills" :key = 'index'>{{data.text}}</p>
     <hr>
     <span v-if="skills.length > 2">You have more than thing you have know.</span>

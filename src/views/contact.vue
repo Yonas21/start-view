@@ -3,6 +3,7 @@
 </template>
 
 <script>
+/* eslint-disable */
 import Contact from '@/components/contact.vue';
 export default {
     name:'contact',
