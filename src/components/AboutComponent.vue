@@ -14,10 +14,12 @@
         <!--<label for="username" class="v-label">User Name</label>-->
         <!--<input type="text" class="form-control" v-model="name">-->
         <!--</div>-->
-
-        <!--<div class="list-item">-->
-            <!--<v-list-tile-title v-for="item in items">{{item}}</v-list-tile-title>-->
-        <!--</div>-->
+        <div class="container-fluid">
+            <ul class="list-group">
+                <li class= "list-group-item active">User Names</li>
+                <li class= "list-group-item" v-for="item in items"> {{item}}}</li>
+            </ul>
+        </div>
 
         <div class="container">
             <p>The Original user name: {{userName}}</p>
@@ -58,9 +60,8 @@
         methods:{
             showSome(){
                 console.log("welcome to vue event handling")
-            }
-        },
-        computed: {
+            },
+
             reversedUserName:function () {
                 //reverse the userName from the data item above
                 return this.userName.split('').reverse().join('')

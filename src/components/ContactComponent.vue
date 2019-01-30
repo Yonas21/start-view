@@ -11,7 +11,7 @@
           placeholder="Enter User Name"
           v-model="skill"
         >
-        <small id="username" class="form-text text-muted">Your User Name is Unique.</small>
+        <small id="show-username" class="form-text text-muted">Your User Name is Unique.</small>
         <hr>
 
 		<transition name="alert-in">
@@ -22,16 +22,20 @@
       </div>
 
       <button type="submit" class="btn btn-primary">Submit</button>
+      <hr/>
+
+      <ul class="list-group">
+        <li class="list-group-item active">Skills</li>
+        <li class="list-group-item" v-for="(data,index) in skills" :key="index">{{data.text}}</li>
+      </ul>
 
     </form>
-    <ul>
-      <li v-for="(data,index) in skills" :key="index">{{data.text}}</li>
-    </ul>
   </div>
 </template>
 
 <script>
 /*eslint-disable */
+
 export default {
   name: "contactComponent",
   data() {
@@ -61,23 +65,7 @@ export default {
 </script>
 
 <style src = "C:/Users/Yon Real/Documents/FeedbackHub/start-vue/node_modules/bootstrap/dist/css/bootstrap.min.css">
-
-.alert-in-enter-active {
-	animation-delay: bounce-in 1s
-}
-.alert-in-leave-active {
-	animation-delay: bounce-in 1s reverse;
-}
-
-@keyframes bounce-in {
-	0% {
-		transform: scale(0)
-	}
-	50% {
-		transform: scale(2)
-	}
-	100% {
-		transform: scale(1)
-	}
-}
+  ul {
+    display: block;
+  }
 </style>
